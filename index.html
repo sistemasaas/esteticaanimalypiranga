@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Animal Ypiranga - Cuidado Premium para seu Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Botões Flutuantes -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/5561991735552" target="_blank" class="floating-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/esteticanimal_ypiranga" target="_blank" class="floating-btn instagram-btn">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Carrinho de Compras -->
+    <div id="cartButton" class="floating-btn cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount" class="cart-count">0</span>
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close">&times;</span>
+            <h2>Meu Carrinho</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
+                <p class="empty-cart-message">Seu carrinho está vazio</p>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="/bold.ne/logo.png" alt="Estética Animal Ypiranga" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#services" class="nav-link">Serviços</a></li>
+                    <li><a href="#products" class="nav-link">Produtos</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#gallery" class="nav-link">Galeria</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                    <li><button id="scheduleBtn" class="schedule-btn">Agendar</button></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Cuidado Premium para seu Pet</h1>
+            <p class="hero-subtitle">Transformamos seu animal de estimação com carinho, profissionalismo e os melhores produtos do mercado</p>
+            <button id="heroScheduleBtn" class="cta-button">Agende Agora</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg" alt="Pet sendo cuidado">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <!-- Banho Premium -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/bold.ne/hydra_kit.jpg" alt="Banho Premium">
+                    </div>
+                    <h3>Banho Premium</h3>
+                    <p>Banho completo com produtos de alta qualidade e secagem profissional</p>
+                    <div class="service-prices">
+                        <span>Pequeno: R$ 50,00</span>
+                        <span>Médio: R$ 60,00</span>
+                        <span>Grande: R$ 70,00</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Banho Premium - Pequeno" data-price="50.00">Adicionar ao Carrinho</button>
+                </div>
+                
+                <!-- Banho Golden -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="/bold.ne/pet_show.jpg" alt="Banho Golden">
+                    </div>
+                    <h3>Banho Golden</h3>
+                    <p>Banho especial com tratamento diferenciado para seu pet</p>
+                    <div class="service-prices">
+                        <span>Pequeno: R$ 40,00</span>
+                        <span>Médio: R$ 50,00</span>
+                        <span>Grande: R$ 60,00</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Banho Golden - Pequeno" data-price="40.00">Adicionar ao Carrinho</button>
+                </div>
+                
+                <!-- Tosa BB -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Tosa BB</h3>
+                    <p>Tosa completa com foco em higiene e conforto para filhotes</p>
+                    <span class="price">R$ 90,00</span>
+                    <button class="add-to-cart-btn" data-service="Tosa BB" data-price="90.00">Adicionar ao Carrinho</button>
+                </div>
+                
+                <!-- Tosa Geral -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Tosa Geral</h3>
+                    <p>Tosa completa em todo o corpo do animal</p>
+                    <span class="price">R$ 80,00</span>
+                    <button class="add-to-cart-btn" data-service="Tosa Geral" data-price="80.00">Adicionar ao Carrinho</button>
+                </div>
+                
+                <!-- Hidratação -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Hidratação</h3>
+                    <p>Tratamento hidratante para pele e pelos</p>
+                    <span class="price">R$ 20,00</span>
+                    <button class="add-to-cart-btn" data-service="Hidratação" data-price="20.00">Adicionar ao Carrinho</button>
+                </div>
+                
+                <!-- Desembolo -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Desembolo</h3>
+                    <p>Remoção de nós e pelos embaraçados</p>
+                    <div class="service-levels">
+                        <div>
+                            <span>Nível 1 (Fácil)</span>
+                            <span>R$ 30,00</span>
+                        </div>
+                        <div>
+                            <span>Nível 2 (Médio)</span>
+                            <span>R$ 40,00</span>
+                        </div>
+                        <div>
+                            <span>Nível 3 (Difícil)</span>
+                            <span>R$ 50,00</span>
+                        </div>
+                    </div>
+                    <div class="level-description">
+                        <p><strong>Níveis de dificuldade:</strong></p>
+                        <p>1: Poucos nós, fácil desembaraço</p>
+                        <p>2: Média quantidade de nós, requer mais tempo</p>
+                        <p>3: Muitos nós profundos, pode exigir tosa</p>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Desembolo - Nível 1" data-price="30.00">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            
+            <!-- Abas de Categorias -->
+            <div class="product-tabs">
+                <button class="tab-btn active" data-category="dogs">Cães</button>
+                <button class="tab-btn" data-category="cats">Gatos</button>
+                <button class="tab-btn" data-category="beds">Camas e Casinhas</button>
+            </div>
+            
+            <!-- Produtos para Cães -->
+            <div class="product-category active" id="dogs-products">
+                <h3>Higiene e Saúde para Cães</h3>
+                <div class="products-grid">
+                    <!-- Produto 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/6853286/pexels-photo-6853286.jpeg" alt="Shampoo para Cães">
+                        </div>
+                        <div class="product-info">
+                            <h4>Shampoo Hidratante</h4>
+                            <div class="product-types">
+                                <span>Adultos</span>
+                                <span>Filhotes</span>
+                                <span>Idosos</span>
+                            </div>
+                            <span class="product-price">R$ 45,90</span>
+                            <button class="add-to-cart-btn" data-service="Shampoo Hidratante para Cães" data-price="45.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/6865049/pexels-photo-6865049.jpeg" alt="Coleira Antipulgas">
+                        </div>
+                        <div class="product-info">
+                            <h4>Coleira Antipulgas</h4>
+                            <div class="product-types">
+                                <span>Pequeno</span>
+                                <span>Médio</span>
+                                <span>Grande</span>
+                            </div>
+                            <span class="product-price">R$ 89,90</span>
+                            <button class="add-to-cart-btn" data-service="Coleira Antipulgas para Cães" data-price="89.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/5691866/pexels-photo-5691866.jpeg" alt="Ração Premium">
+                        </div>
+                        <div class="product-info">
+                            <h4>Ração Premium</h4>
+                            <div class="product-types">
+                                <span>Filhotes</span>
+                                <span>Adultos</span>
+                                <span>Sênior</span>
+                                <span>Raças Específicas</span>
+                            </div>
+                            <span class="product-price">R$ 129,90</span>
+                            <button class="add-to-cart-btn" data-service="Ração Premium para Cães" data-price="129.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Produtos para Gatos -->
+            <div class="product-category" id="cats-products" style="display: none;">
+                <h3>Higiene e Saúde para Gatos</h3>
+                <div class="products-grid">
+                    <!-- Produto 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/6853287/pexels-photo-6853287.jpeg" alt="Shampoo para Gatos">
+                        </div>
+                        <div class="product-info">
+                            <h4>Shampoo para Gatos</h4>
+                            <div class="product-types">
+                                <span>Adultos</span>
+                                <span>Filhotes</span>
+                            </div>
+                            <span class="product-price">R$ 39,90</span>
+                            <button class="add-to-cart-btn" data-service="Shampoo para Gatos" data-price="39.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/6865048/pexels-photo-6865048.jpeg" alt="Areia Sanitária">
+                        </div>
+                        <div class="product-info">
+                            <h4>Areia Sanitária</h4>
+                            <div class="product-types">
+                                <span>Standard</span>
+                                <span>Premium</span>
+                            </div>
+                            <span class="product-price">R$ 59,90</span>
+                            <button class="add-to-cart-btn" data-service="Areia Sanitária para Gatos" data-price="59.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/5691867/pexels-photo-5691867.jpeg" alt="Ração para Gatos">
+                        </div>
+                        <div class="product-info">
+                            <h4>Ração Premium</h4>
+                            <div class="product-types">
+                                <span>Filhotes</span>
+                                <span>Adultos</span>
+                                <span>Sênior</span>
+                            </div>
+                            <span class="product-price">R$ 99,90</span>
+                            <button class="add-to-cart-btn" data-service="Ração Premium para Gatos" data-price="99.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Camas e Casinhas -->
+            <div class="product-category" id="beds-products" style="display: none;">
+                <h3>Camas e Casinhas</h3>
+                <div class="products-grid">
+                    <!-- Produto 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/4588018/pexels-photo-4588018.jpeg" alt="Cama para Cães">
+                        </div>
+                        <div class="product-info">
+                            <h4>Cama Premium</h4>
+                            <div class="product-types">
+                                <span>Pequeno</span>
+                                <span>Médio</span>
+                                <span>Grande</span>
+                            </div>
+                            <span class="product-price">R$ 149,90</span>
+                            <button class="add-to-cart-btn" data-service="Cama Premium para Cães" data-price="149.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/4588047/pexels-photo-4588047.jpeg" alt="Casinha para Cães">
+                        </div>
+                        <div class="product-info">
+                            <h4>Casinha de Madeira</h4>
+                            <div class="product-types">
+                                <span>Pequeno</span>
+                                <span>Médio</span>
+                                <span>Grande</span>
+                            </div>
+                            <span class="product-price">R$ 299,90</span>
+                            <button class="add-to-cart-btn" data-service="Casinha de Madeira para Cães" data-price="299.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/4587991/pexels-photo-4587991.jpeg" alt="Cama para Gatos">
+                        </div>
+                        <div class="product-info">
+                            <h4>Cama para Gatos</h4>
+                            <div class="product-types">
+                                <span>Standard</span>
+                                <span>Premium</span>
+                            </div>
+                            <span class="product-price">R$ 129,90</span>
+                            <button class="add-to-cart-btn" data-service="Cama para Gatos" data-price="129.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre Nós</h2>
+                    <p>Com mais de 6 anos de experiência no cuidado de animais Agropecuaria Ypiranga,fundamos a Estética Animal Ypiranga Esta sendo referência em qualidade e carinho no atendimento aos pets. neste 3 meses de inauguracao</p>
+                    <p>Nossa equipe é formada por profissionais especializados que tratam cada animal com o amor e cuidado que eles merecem.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Profissionais Certificados</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Produtos Premium</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ambiente Seguro</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Atendimento Personalizado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/6816861/pexels-photo-6816861.jpeg" alt="Profissional cuidando de pet">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/4587955/pexels-photo-4587955.jpeg" alt="Pet após tosa">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/4588065/pexels-photo-4588065.jpeg" alt="Banho em pet">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/4588047/pexels-photo-4588047.jpeg" alt="Cuidados com pet">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/4588018/pexels-photo-4588018.jpeg" alt="Pet feliz">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/4588001/pexels-photo-4588001.jpeg" alt="Tosa profissional">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/4587991/pexels-photo-4587991.jpeg" alt="Pet relaxando">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Ypiranga, Brasília - DF</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(61) 99173-5552</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sábado: 8h às 18h</p>
+                            <p>Domingo: 8h às 12h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="tel" placeholder="Seu Telefone" required>
+                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                        <button type="submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="/bold.ne/logo.png" alt="Estética Animal Ypiranga" class="logo-img">
+                        <span class="logo-text">Estética Animal Ypiranga</span>
+                    </div>
+                    <p>Cuidando do seu pet com amor e profissionalismo</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#products">Produtos</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/5561992069975" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Estética Animal Ypiranga. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Agendamento -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agendar Serviço</h2>
+            <form id="scheduleForm">
+                <div class="form-group">
+                    <label for="petName">Nome do Pet:</label>
+                    <input type="text" id="petName" required>
+                </div>
+                <div class="form-group">
+                    <label for="ownerName">Nome do Tutor:</label>
+                    <input type="text" id="ownerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Serviço:</label>
+                    <select id="service" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="Banho Premium - Pequeno - R$ 50,00">Banho Premium - Pequeno - R$ 50,00</option>
+                        <option value="Banho Premium - Médio - R$ 60,00">Banho Premium - Médio - R$ 60,00</option>
+                        <option value="Banho Premium - Grande - R$ 70,00">Banho Premium - Grande - R$ 70,00</option>
+                        <option value="Banho Golden - Pequeno - R$ 40,00">Banho Golden - Pequeno - R$ 40,00</option>
+                        <option value="Banho Golden - Médio - R$ 50,00">Banho Golden - Médio - R$ 50,00</option>
+                        <option value="Banho Golden - Grande - R$ 60,00">Banho Golden - Grande - R$ 60,00</option>
+                        <option value="Tosa BB - R$ 90,00">Tosa BB - R$ 90,00</option>
+                        <option value="Tosa Geral - R$ 80,00">Tosa Geral - R$ 80,00</option>
+                        <option value="Hidratação - R$ 20,00">Hidratação - R$ 20,00</option>
+                        <option value="Desembolo - Nível 1 - R$ 30,00">Desembolo - Nível 1 - R$ 30,00</option>
+                        <option value="Desembolo - Nível 2 - R$ 40,00">Desembolo - Nível 2 - R$ 40,00</option>
+                        <option value="Desembolo - Nível 3 - R$ 50,00">Desembolo - Nível 3 - R$ 50,00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Data Pretendida:</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Horário Preferido:</label>
+                    <select id="time" required>
+                        <option value="">Selecione um horário</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="observations">Observações:</label>
+                    <textarea id="observations" rows="3" placeholder="Informações adicionais sobre seu pet..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Agendamento</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Checkout -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-modal-content">
+            <span class="close">&times;</span>
+            <h2>Finalizar Compra</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="checkoutName">Nome Completo:</label>
+                    <input type="text" id="checkoutName" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutPhone">Telefone:</label>
+                    <input type="tel" id="checkoutPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutPetName">Nome do Pet:</label>
+                    <input type="text" id="checkoutPetName" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutCep">CEP (opcional):</label>
+                    <input type="text" id="checkoutCep">
+                </div>
+                <div class="form-group">
+                    <label for="checkoutAddress">Endereço (opcional):</label>
+                    <input type="text" id="checkoutAddress">
+                </div>
+                <div class="form-group">
+                    <label>Itens do Carrinho:</label>
+                    <div id="checkoutItems" class="checkout-items">
+                        <!-- Itens serão preenchidos dinamicamente -->
+                    </div>
+                </div>
+                <div class="checkout-total">
+                    <span>Total:</span>
+                    <span id="checkoutTotal">R$ 0,00</span>
+                </div>
+                <button type="submit" class="checkout-submit-btn">Enviar Pedido via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
